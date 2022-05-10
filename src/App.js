@@ -6,7 +6,7 @@ import Nabvar from "./Pages/Share/Nabvar";
 
 function App() {
   return (
-    <div >
+    <div  className="p-12">
       <Nabvar/>
 
 
