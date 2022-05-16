@@ -3,12 +3,12 @@ import appointment from '../../assets/images/appointment.png'
 const Contact = () => {
     return (
         <section >
-            <section style={{ background: `url(${appointment})` }}>
+            <section style={{ background: `url(${appointment})`, backgroundSize: 'cover'}}>
                 <div className="hero min-h-screen ">
                     <div>
                         <h1 className='text-center text-primary text-xl'>Contac US</h1>
                         <h1 className='text-center text-white text-3xl'>Stay connected with us</h1>
-                        <div className="hero-content flex-col lg:flex-row-reverse lg:max- w-96">
+                        <div className="hero-content flex-col lg:flex-row-reverse lg:max- w-lg w-100">
 
                             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                                 <div className="card-body">
