@@ -17,7 +17,10 @@ const Nabvar = () => {
             <li><Link to="/about"> About</Link></li>
             <li><Link to="/appointment"> Appointment</Link></li>
             <li><Link to="/reviews"> Reviews</Link></li>
-            <li><Link to="/contact"> Contact Us</Link></li>
+            <li><Link to="/contact"> ContactUs</Link></li>
+            {
+                user &&  <li><Link to="/deshboard"> DashBoard</Link></li> 
+            }
             <li>{
                 user ? <button class="btn btn-ghost" onClick={logout}>Sign out</button>
                 : <Link to="/login"> Login</Link>

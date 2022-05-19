@@ -1,9 +1,10 @@
 import { format } from 'date-fns';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../Firebase.init';
 
-const ServiceModal = ({ tetment, date, setTetment }) => {
+const ServiceModal = ({ tetment, date, setTetment, refetch}) => {
   const {name, slots} = tetment;
   const [user] = useAuthState(auth);
   const formtDate = format(date, "PP")
@@ -14,7 +15,7 @@ const ServiceModal = ({ tetment, date, setTetment }) => {
   const bookHendal = event =>{
     event.preventDefault()
     const slot = event.target.slot.value
-    setTetment('')
+    setTetment(null)
     const booking = {
 
       treatmentId: tetment._id,
@@ -36,7 +37,22 @@ const ServiceModal = ({ tetment, date, setTetment }) => {
 })
   .then(res => res.json())
   .then((data) =>{
-    setTetment('')
+
+
+    console.log(data)
+
+
+    if(data.success){
+      toast(`appointment is set ${formtDate} and ${slot}`)
+    }
+    else{
+      // toast.error(`already appointment is set ${data.booking?.date} and ${data.booking?.slot}`)
+      toast.error(`already is set ${data.booking?.date} and ${data.booking?.slot}`)
+
+
+    }
+    refetch()
+    setTetment(null)
   });
   }
 

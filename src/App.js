@@ -6,6 +6,12 @@ import Login from "./Pages/Login/Login";
 import RequireAuth from "./Pages/Login/RequireAuth";
 import SignIn from "./Pages/Login/SignIn";
 import Nabvar from "./Pages/Share/Nabvar";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import DashBoard from "./Pages/DashBoard/DashBoard";
+import MyAppoinment from "./Pages/DashBoard/MyAppoinment";
+import MyReview from "./Pages/DashBoard/MyReview";
+
 
 function App() {
   return (
@@ -27,8 +33,27 @@ function App() {
         
         
         }></Route>
+
+
+        <Route path="/deshboard" element={
+        
+        <RequireAuth>
+         <DashBoard/>
+        </RequireAuth>
+        
+        
+        }>
+          <Route index element={<MyAppoinment/>}></Route>
+
+          <Route path="review" element={<MyReview/>}></Route>
+
+
+        </Route>
+
+
         <Route path="/signIn" element={<SignIn/>}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
