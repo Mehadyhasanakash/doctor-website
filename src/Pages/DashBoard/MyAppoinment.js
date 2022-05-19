@@ -24,18 +24,20 @@ const MyAppoinment = () => {
       
     <thead>
       <tr>
+        <th>Sl.</th>
         <th>name</th>
         <th>treatment</th>
         <th>date</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody >
 
             {
-              appoinments.map( appoinment=>  <tr>
+              appoinments.map( (appoinment, index) =>  <tr>
+                <td>{index +1}</td>
                 <td>{appoinment.patientName}</td>
-                <td>{appoinment.patientName}</td>
-                <td>{appoinment.patientName}</td>
+                <td>{appoinment.treatment}</td>
+                <td>{appoinment.date}</td>
                 
               </tr>)  
             }

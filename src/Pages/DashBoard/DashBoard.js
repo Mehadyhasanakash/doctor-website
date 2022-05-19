@@ -7,7 +7,7 @@ const DashBoard = () => {
   <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
     {/* <!-- Page content here --> */}
-    <h2>Dashboard</h2>
+    <h2 className='text-3xl'>Dashboard</h2>
     <Outlet></Outlet>
     
   
