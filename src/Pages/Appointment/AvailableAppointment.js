@@ -10,7 +10,7 @@ const AvailableAppointment = ({date}) => {
     const [tetment, setTetment] = useState(null)
     
     const {data: services, isLoading, refetch} = useQuery(['booking', formtDate],()=>
-    fetch(`http://localhost:5000/booking?date=${formtDate}`)
+    fetch(`http://localhost:5000/available?date=${formtDate}`)
         .then(res => res.json())   
     )
     if(isLoading){
