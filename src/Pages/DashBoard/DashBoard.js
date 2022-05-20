@@ -7,7 +7,7 @@ const DashBoard = () => {
   <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
     {/* <!-- Page content here --> */}
-    <h2 className='text-3xl'>Dashboard</h2>
+    <h2 className='text-3xl text-accent font-bold'>Dashboard</h2>
     <Outlet></Outlet>
     
   
@@ -16,8 +16,8 @@ const DashBoard = () => {
     <label for="my-drawer-2" class="drawer-overlay"></label> 
     <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
       {/* <!-- Sidebar content here --> */}
-      <li><Link to='/deshboard'>Sidebar Item 1</Link></li>
-      <li><Link to='/deshboard/review'>Sidebar Item 2</Link></li>
+      <li><Link to='/deshboard'>Dashboard</Link></li>
+      <li><Link to='/deshboard/review'>Review</Link></li>
     </ul>
   
   </div>
